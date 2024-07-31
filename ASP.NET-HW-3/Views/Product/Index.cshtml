@@ -1,0 +1,31 @@
+﻿@model ProductListViewModel
+
+<div>
+
+	<a asp-controller="Product" asp-action="Add" style="color:black ">ADD Product</a>
+
+	<ul>
+
+
+		@{
+			foreach(var i in Model.Products)
+			{
+				<li>
+						<p>@i.Id</p>
+						<img src="/img/@i.ImgProduct" alt="@i.Name" style="width:100vh"/>
+						<h2>Name: @i.Name</h2>
+						<h3>Description: @i.Description</h3>
+						<h3>Discount: @i.Discount %</h3>
+						<h3>Price: @i.Price $</h3>
+						<a asp-controller="Product" asp-action="Delete" style="background-color:red; color:black;font-size:25px">DELETE</a>
+					<a asp-controller="Product" asp-action="Update" style="background-color:orange;color:black;font-size:25px">UPDATE</a>
+
+				
+				</li>
+
+				
+			}
+		}
+	</ul>
+
+</div>
